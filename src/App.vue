@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <songList :data="songListData"></songList>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import songList from './components/SongList'
+import axios from 'axios'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      songListData:[]
+    }
+  },
+  methods:{
+
+    // 获取歌曲列表
+    async getSongList(){
+      let url = 'http://localhost:3000/artists?id=7424';
+      let {data:res} = await axios.get(url);
+
+      // 对得到的数据进行过滤
+      let newData = res.hotSongs.map(item=>{
+        return {
+          id:item.id,
+          name:item.name,
+          ar:item.ar,
+          al:{
+            name:item.al.name,
+            picUrl:item.al.picUrl
+          }
+        }
+      })
+
+      this.songListData = newData
+      console.log(this.songListData);
+    }
+  },
+  created(){
+    this.getSongList()
+  },
+  components:{
+    songList
   }
+
 }
 </script>
+<style scoped>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
