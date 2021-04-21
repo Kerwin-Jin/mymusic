@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="song-list-page">
         <h1>SongList</h1>
         <ul>
             <li v-for="(item,i) in data" :key="item.id" class="item" @click="songClickAction(item)">
@@ -29,6 +29,11 @@ export default {
 }
 </script>
 <style scoped>
+.song-list-page{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
 h1{
     height: 50px;
     text-align: center;

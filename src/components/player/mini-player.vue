@@ -62,14 +62,7 @@ export default {
   border-radius: 50%;
   
 }
-@keyframes rotate {
-  0%{
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(360deg);
-  }
-}
+
 .play{
   animation: rotate 10s linear infinite;
 }

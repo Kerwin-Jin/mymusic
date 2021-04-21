@@ -15,7 +15,6 @@ export default {
     }
   },
   methods:{
-
     // 获取歌曲列表
     async getSongList(){
       let url = 'http://localhost:3000/artists?id=7424';
@@ -56,5 +55,13 @@ export default {
 html,body,#app{
   width: 100%;
   height: 100%;
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
 </style>
