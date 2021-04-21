@@ -1,5 +1,7 @@
 <template>
-  <MiniPlayer></MiniPlayer>
+  <div>
+    <NormalPlayer></NormalPlayer>
+  </div>
 </template>
 
 <script>

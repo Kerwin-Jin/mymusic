@@ -10,7 +10,7 @@
       </div>
       
       <div class="control">
-        <i class="iconfont icon-play"></i>
+        <i class="iconfont" :class="{'icon-play':!isPlay,'icon-icozanting':isPlay}"></i>
       </div>
       <div class="control">
         <i class="iconfont icon-musiclist"></i>
@@ -49,6 +49,7 @@ export default {
   display: flex;
   align-items: center;
   background: #fff;
+  box-shadow: 0 0 5px 3px;
 }
 .img_wrapper{
   width: 40px;
@@ -90,9 +91,7 @@ export default {
   color: #d44439;
 }
 .control .iconfont{
-  font-size: 16px;
+  font-size: 20px;
 }
-.control .icon-musiclist{
-  font-size: 30px;
-}
+
 </style>
