@@ -1,10 +1,12 @@
 <template>
   <div>
+    <player></player>
     <songList :data="songListData"></songList>
   </div>
 </template>
 <script>
 import songList from './components/SongList'
+import player from './components/player/Player'
 import axios from 'axios'
 export default {
   data(){
@@ -24,7 +26,7 @@ export default {
         return {
           id:item.id,
           name:item.name,
-          ar:item.ar,
+          ar:item.ar.map(item=>item.name).join('/'),
           al:{
             name:item.al.name,
             picUrl:item.al.picUrl
@@ -40,11 +42,19 @@ export default {
     this.getSongList()
   },
   components:{
-    songList
+    songList,
+    player
   }
 
 }
 </script>
-<style scoped>
-
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body,#app{
+  width: 100%;
+  height: 100%;
+}
 </style>
