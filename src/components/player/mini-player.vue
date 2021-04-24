@@ -1,16 +1,21 @@
 <!--底部小播放器-->
 <template>
   <div class="player-container">
+
+      <!-- 图片 -->
       <div class="img_wrapper">
           <img :src="currentSong.al.picUrl" :class="{play:isPlay}">
       </div>
+
+      <!-- 歌曲名字和歌手名字 -->
       <div class="text">
         <div class="name">{{currentSong.name}}</div>
         <div class="desc">{{currentSong.ar}}</div>
       </div>
       
-      <div class="control">
-        <i class="iconfont" :class="{'icon-play':!isPlay,'icon-icozanting':isPlay}"></i>
+      <!-- 图标 -->
+      <div class="control circle">
+        <circle-progress v-model="isPlay"></circle-progress>
       </div>
       <div class="control">
         <i class="iconfont icon-musiclist"></i>
@@ -19,10 +24,14 @@
 </template>
 
 <script>
+import CircleProgress from './children/circle-progress'
 export default {
+  components:{
+    CircleProgress
+  },
   data() {
     return {
-      isPlay:false,
+      isPlay:true,
       currentSong: {
         id: 1812673579,
         name: "等你归来",
@@ -82,6 +91,11 @@ export default {
   flex: 0 0 30px;
   padding: 0 10px;
   color: #d44439;
+}
+.circle{
+  width: 30px;
+  height: 30px;
+  background: pink;
 }
 .control .iconfont{
   font-size: 20px;

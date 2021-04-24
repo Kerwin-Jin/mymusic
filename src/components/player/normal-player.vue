@@ -2,7 +2,7 @@
 <template>
   <div class="normal-player-container">
     <div class="background">
-      <img :src="currentSong.al.picUrl" alt="">
+      <img :src="currentSong.al.picUrl">
     </div>
     <div class="background-layer"></div>
     <!-- 头部 -->
@@ -18,7 +18,7 @@
     <!-- 中间部分 -->
     <div class="middle">
       <div class="cd-wrapper">
-        <img class="image" :src="currentSong.al.picUrl">
+        <img class="image" :src="currentSong.al.picUrl"  :class="{play:isPlay}">
       </div>
     </div>
     
@@ -115,6 +115,10 @@ export default {
 
 /* middle */
 .middle{
+  position:absolute;
+  top:100px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 80%;
   height: 80vw;
   margin: 10px auto;
@@ -136,7 +140,6 @@ export default {
   border:10px solid #eee;
   box-sizing: border-box;
   border-radius:50%;
-  animation: rotate 3s linear infinite;
 }
 
 /* bottom */
@@ -165,5 +168,8 @@ export default {
 }
 .control i{
   font-size: 30px;
+}
+.play{
+  animation: rotate 10s linear infinite;
 }
 </style>

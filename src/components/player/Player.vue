@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- <MiniPlayer></MiniPlayer> -->
-    <NormalPlayer></NormalPlayer>
+    <MiniPlayer></MiniPlayer>
+    <!-- <NormalPlayer></NormalPlayer> -->
   </div>
 </template>
 
