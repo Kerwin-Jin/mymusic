@@ -15,7 +15,7 @@
       
       <!-- 图标 -->
       <div class="control circle">
-        <circle-progress v-model="isPlay"></circle-progress>
+        <circle-progress v-model="isPlay" :progress='progress'></circle-progress>
       </div>
       <div class="control">
         <i class="iconfont icon-musiclist"></i>
@@ -31,7 +31,8 @@ export default {
   },
   data() {
     return {
-      isPlay:true,
+      progress:0.2,
+      isPlay:false,
       currentSong: {
         id: 1812673579,
         name: "等你归来",
@@ -89,7 +90,7 @@ export default {
 }
 .control{
   flex: 0 0 30px;
-  padding: 0 10px;
+  margin: 0 10px;
   color: #d44439;
 }
 .circle{

@@ -1,7 +1,7 @@
 <template>
   <div>
     <player></player>
-    <songList :data="songListData"></songList>
+    <!-- <songList :data="songListData"></songList> -->
   </div>
 </template>
 <script>
