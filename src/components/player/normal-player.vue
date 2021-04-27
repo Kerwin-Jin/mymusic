@@ -21,9 +21,11 @@
         <img class="image" :src="currentSong.al.picUrl"  :class="{play:isPlay}">
       </div>
     </div>
+
     
     <!-- 底部 -->
     <div class="bottom">
+      <BarProgress></BarProgress>
       <div class="control">
         <div class="left">
           <i class="iconfont icon-xunhuan"></i>
@@ -42,7 +44,11 @@
 </template>
 
 <script>
+import BarProgress from "./children/bar-progress"
 export default {
+  components:{
+    BarProgress
+  },
   data() {
     return {
       isPlay:false,

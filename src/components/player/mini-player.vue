@@ -96,7 +96,6 @@ export default {
 .circle{
   width: 30px;
   height: 30px;
-  background: pink;
 }
 .control .iconfont{
   font-size: 20px;
