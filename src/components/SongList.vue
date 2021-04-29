@@ -2,7 +2,7 @@
     <div class="song-list-page">
         <h1>SongList</h1>
         <ul>
-            <li v-for="(item,i) in data" :key="item.id" class="item" @click="songClickAction(item)">
+            <li v-for="(item,index) in data" :key="item.id" class="item" @click="songClickAction(index)">
                 <p class="index">{{i+1}}</p>
                 <div class="content">
                     <h3 class="name">{{item.name}}</h3>
@@ -22,8 +22,9 @@ export default {
         data:Array
     },
     methods:{
-        songClickAction(item){
-            console.log(JSON.stringify(item))
+        songClickAction(index){
+            console.log(this.data)
+            console.log(this.index)
         }
     }
 }
